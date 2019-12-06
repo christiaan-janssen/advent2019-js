@@ -15,6 +15,7 @@
     "start": "nodemon --exec babel-node app.js",
     "test": "jest --no-cache ./*",
     "watch": "jest --no-cache --watch ./*",
+    "build": "rm -rf dist && babel . --ignore node_modules,test,dist -d dist --source-maps && cp -r input dist/",
     "lint": "eslint .",
     "lint-test": "eslint . && jest --no-cache ./* "
   },

@@ -1,2 +1,5 @@
 node_modules/
+input/
 package-lock.json
+launch.json
+tasks.json

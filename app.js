@@ -1,11 +1,16 @@
 const fs = require('fs');
 
-import { calculateMass } from './puzzels/puzzel-01';
+import { calculateFuelForMass, calculateFuelForFuel } from './puzzels/puzzel-01';
 
-// Puzzle 01 - A
+// Puzzle 01
 let input = fs.readFileSync('./input/puzzel01.txt', {encoding: 'utf8'}).split(/\r?\n/);
 
-console.log("Puzzle 01 - A: " + input.map(calculateMass).reduce((acc, curr) => {
-  return acc + curr;
-}));
+console.log("Puzzle 01 - A: " + input
+  .map(calculateFuelForMass)
+  .reduce((acc, curr) => acc + curr, 0)
+);
 
+console.log("Puzzle 01 - B: " + input
+  .map(calculateFuelForFuel)
+  .reduce((acc, curr) => acc + curr, 0)
+);
