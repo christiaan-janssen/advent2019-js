@@ -1,5 +1,7 @@
 node_modules/
 input/
+.vscode/
+.idea/
 package-lock.json
 launch.json
 tasks.json

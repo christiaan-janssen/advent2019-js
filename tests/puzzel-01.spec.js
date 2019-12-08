@@ -33,4 +33,4 @@ describe('Calculate fuel for fuel', () => {
     ].reduce((acc, curr) => acc + curr, 0)).toEqual(2+966+50346);
   });
 
-})
+});
