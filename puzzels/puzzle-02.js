@@ -28,3 +28,20 @@ export const runProgram = (program) => {
     
     return program;
 };
+
+ export const findInputForOutput = (expected, initialState) => {
+    let output = [];
+    for (let noun = 0; noun < 100; noun++) {
+        for (let verb = 0; verb < 100; verb++) {
+            let program = Object.values(initialState);
+            
+            program[1] = noun;
+            program[2] = verb;
+            output = runProgram(program)[0];
+
+            if (output === expected) {
+                return 100 * noun + verb;
+            }
+        }    
+    }
+ }

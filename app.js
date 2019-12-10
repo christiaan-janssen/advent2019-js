@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 import { calculateFuelForMass, calculateFuelForFuel } from './puzzels/puzzel-01';
-import { runProgram } from './puzzels/puzzle-02';
+import { runProgram, findInputForOutput } from './puzzels/puzzle-02';
 
 // Puzzle 01
 let input = fs.readFileSync('./input/puzzel01.txt', {encoding: 'utf8'}).split(/\r?\n/);
@@ -23,3 +23,8 @@ program[1] = 12;
 program[2] = 2;
 
 console.log("Puzzle 02 - A: " + runProgram(program)[0]);
+
+let program02 = fs.readFileSync('./input/puzzle02.txt', {encoding: 'utf8'})
+					.split(",").map(x => parseInt(x, 10));
+
+console.log("Puzzle 02 - B: " + findInputForOutput(19690720, program02));
